@@ -4,4 +4,8 @@ class User < ActiveRecord::Base
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
+
+#associating user to posts
+has_many :posts
+#go to posts and belongs_to          
 end

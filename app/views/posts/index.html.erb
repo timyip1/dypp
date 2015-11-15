@@ -5,6 +5,7 @@
 <table>
   <thead>
     <tr>
+       <th>User ID</th>
       <th>Username</th>
       <th>Created At</th>
       <th>Duration</th>
@@ -16,6 +17,7 @@
   <tbody>
     <% @posts.each do |post| %>
       <tr>
+        <td><%= post.user_id %></td>
         <td><%= post.username %></td>
         <td><%= post.created_at %></td>
         <td><%= post.Duration %></td>
