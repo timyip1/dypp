@@ -2,8 +2,20 @@
 <p>Find me in app/views/welcome/index.html.erb</p>
 
 
-<%= link_to "Sign up now!", new_user_registration_path, class: "btn btn-large btn-primary" %>
+
 
 <p>
-Admin
-<%= link_to "show_index_of_users", users_path %>
+<h2>
+<%= link_to "Log practice!", new_post_path, class: "btn btn-large btn-primary" %>
+</h2>
+<p>
+
+<h2>Index</h2>
+<%= link_to "See Posts Index", posts_path %><p>
+<%= link_to "See Users Index", users_path %>
+
+
+
+<p>
+	<h2>
+	Not a member yet?</h2> <%= link_to "Sign up now!", new_user_registration_path, class: "btn btn-large btn-primary" %>

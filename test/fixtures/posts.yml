@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user_id: 1
+  Timestamp: 2015-11-14 21:49:16
+  Duration: 1
+  Rating: MyText
+
+two:
+  user_id: 1
+  Timestamp: 2015-11-14 21:49:16
+  Duration: 1
+  Rating: MyText

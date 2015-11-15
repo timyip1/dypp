@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :posts
+  devise_for :teachers
   get 'users/index'
 
   devise_for :admins
