@@ -12,10 +12,14 @@
 
     <div><%= f.label :username %> <%= f.text_field :username %></div><p>
 
+     <%= f.input :teacher, required: true %>
+
+
+
     <%= f.input :password, autocomplete: "off", hint: "leave it blank if you don't want to change it", required: false %>
     <%= f.input :password_confirmation, required: false %><p>
     <p><br>
-    <%= f.input :current_password, hint: "we need your current password to confirm your changes", required: true %>
+    <%= f.input :current_password, hint: "we don't need your current password to confirm your changes", required: false %>
   </div>
 <p>
   <div class="form-actions">
