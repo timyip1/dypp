@@ -1,6 +1,11 @@
 class UsersController < ApplicationController
 
- 
+#for now
+def self.find_for_authentication(conditions)
+  conditions = ["username = ? or email = ?", conditions[authentication_keys.first], conditions[authentication_keys.first]]
+  # raise StandardError, conditions.inspect
+  super
+end
 
 def index 
 	@users = User.all 
@@ -12,10 +17,11 @@ end
 end
 
 
+ def destroy
+    @user.destroy
+    respond_to do |format|
+      format.html { redirect_to :back, notice: 'User was successfully destroyed.' }
+      format.json { head :no_content }
+    end
+  end
 
-def destroy
-   User.find(params[:id]).destroy
-    flash[:success] = "User destroyed"
-    redirect_to users_url
-end
-  

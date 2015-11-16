@@ -1,22 +1,21 @@
-<h1>Did you practice?</h1>
 
 
-
-
+<!-- must be logged in to log practice -->
+<% if current_user %>
 <p>
 <h2>
 <%= link_to "Log my practice!", new_post_path, class: "btn btn-large btn-primary" %>
 </h2>
 <p>
-
+ <% end %>
 
 
 
 
 
 <p>
-	<h2>
-	Not a user yet?</h2> <%= link_to "Sign up now!", new_user_registration_path, class: "btn btn-large btn-primary" %><p>
+	<h1>
+	Not a user yet?</h1> <%= link_to "Sign up now!", new_user_registration_path, class: "btn btn-large btn-primary" %><p>
 
 	<p>
 
@@ -24,5 +23,5 @@
 
 
 <h1>Are you a teacher?</h1>
-	 <%= link_to "View all posts", teachers_path %>
+	 <%= link_to "View all posts made by your students", teachers_path %>
 	<p> <%= link_to "See all users", users_path %>
