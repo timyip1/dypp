@@ -1,17 +1,20 @@
-<h1>Get practicing</h1>
+<h1>Did you practice?</h1>
 
 
 
 
 <p>
 <h2>
-<%= link_to "Log practice!", new_post_path, class: "btn btn-large btn-primary" %>
+<%= link_to "Log my practice!", new_post_path, class: "btn btn-large btn-primary" %>
 </h2>
 <p>
 
-<h2>Index</h2>
-<%= link_to "See My Posts", posts_path %><p>
-<%= link_to "See Users Index", users_path %>
+<h1>How have you been practicing?</h1>
+
+<%= link_to "See Practice Log", posts_path, class: "btn btn-large btn-primary" %><p>
+<p>
+	
+
 
 
 
@@ -21,4 +24,9 @@
 
 	<p>
 
-	Admin view can see all: <%= link_to "All posts", teachers_path %>
+
+
+
+<h1>Are you a teacher?</h1>
+	 <%= link_to "View all posts", teachers_path %>
+	<p> <%= link_to "See all users", users_path %>
