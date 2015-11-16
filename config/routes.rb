@@ -6,10 +6,15 @@ Rails.application.routes.draw do
   devise_for :admins
   get 'welcome/index'
 
-devise_for :users, :path_prefix => 'd'
-   root to: "welcome#index"
-resources :users, :only =>[:show]
 
+
+root to: "welcome#index"
+
+
+
+devise_for :users, :controllers => { registrations: 'registrations', :path_prefix => 'd' }
+
+resources :users, :only =>[:show]
 
    match '/users',   to: 'users#index',   via: 'get'
 

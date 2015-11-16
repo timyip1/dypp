@@ -1,5 +1,5 @@
-<h1>Users#index</h1>
-<p>Find me in app/views/users/index.html.erb</p>
+<h1>Lists Every User</h1>
+<p>This file will list all users. Find me in app/views/users/index.html.erb</p>
 
 
 
@@ -9,6 +9,7 @@
     <th>Email </th>
     <th>Username</th>
     <th>Teacher</th>
+    <th></th>
   </tr>
  
 <% @users = User.all %>
@@ -18,8 +19,9 @@
       <td> <%= user.email %></td>
       <td> <%= user.username %></td>
             <td> <%= user.teacher %></td>
+            <td>  </td>
 
-            
+
       <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
  
 

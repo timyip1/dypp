@@ -1,10 +1,10 @@
 class User < ActiveRecord::Base
 
-belongs_to :teacher, class_name: 'Teacher'
+#belongs_to :teacher, class_name: 'Teacher'
 #associating user to posts
 has_many :posts
  include Authority::UserAbilities
-  rolify
+
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,

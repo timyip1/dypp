@@ -1,12 +1,9 @@
 source 'https://rubygems.org'
 gem 'simple_form'
-#authentication  https://github.com/plataformatec/devise#getting-started
 gem 'devise'
-
 gem 'authority'
 gem 'rolify'
 gem 'cancancan', '~> 1.10'
-
 gem 'bootstrap-sass', '~> 3.2.0'
 gem 'autoprefixer-rails'
 
