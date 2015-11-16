@@ -1,22 +1,25 @@
 <p id="notice"><%= notice %></p>
-
-<p>
-  <strong>User:</strong>
-  <%= @post.user_id %>
-</p>
-
-<p>
-  <strong>Username:</strong>
-  <%= @post.username %>
-</p>
+<h1>Success!</h1>
 
 <p>
   <strong>Created at:</strong>
   <%= @post.created_at %>
 </p>
+<p>
+
+  <strong>By User ID:</strong>
+  <%= @post.user_id %>
+</p>
 
 <p>
-  <strong>Duration:</strong>
+  <strong>With Username:</strong>
+  <%= @post.user.username %>
+</p>
+
+
+
+<p>
+  <strong>With Duration Of:</strong>
   <%= @post.Duration %>
 </p>
 
@@ -25,5 +28,5 @@
   <%= @post.Rating %>
 </p>
 
-<%= link_to 'Edit', edit_post_path(@post) %> |
-<%= link_to 'Back', posts_path %>
+<%= link_to 'Edit This Entry', edit_post_path(@post) %> |
+<%= link_to 'See All Entries', posts_path %>
