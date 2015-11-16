@@ -4,8 +4,11 @@ class PostsController < ApplicationController
   # GET /posts
   # GET /posts.json
   def index
-    @posts = Post.all
-  end
+  @posts = Post.where(user_id:current_user)  
+
+ end
+
+
 
   # GET /posts/1
   # GET /posts/1.json
