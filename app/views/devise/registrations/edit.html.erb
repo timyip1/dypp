@@ -11,9 +11,9 @@
     <% end %>
 
     <div><%= f.label :username %> <%= f.text_field :username %></div><p>
-
-     <%= f.input :teacher, required: true %>
-
+<% if request.fullpath.include?('user') %>
+     <%= f.input :teacher_id, required: false %>
+<% end %>
 
 
     <%= f.input :password, autocomplete: "off", hint: "leave it blank if you don't want to change it", required: false %>

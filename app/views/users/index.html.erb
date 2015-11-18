@@ -2,13 +2,15 @@
 <p>This file will list all users. Find me in app/views/users/index.html.erb</p>
 
 
-
+<% @content %>
+<p>
 <table>
   <tr>
     <th>ID</th>
     <th>Email </th>
     <th>Username</th>
-    <th>Teacher</th>
+    <th>Teacher ID</th>
+
     <th></th>
   </tr>
  
@@ -17,8 +19,9 @@
     <tr>
       <td> <%= user.id %></td>
       <td> <%= user.email %></td>
-      <td> <%= user.username %></td>
-            <td> <%= user.teacher %></td>
+      <td><%= link_to user.username, user %></td>
+     <td> <%= user.teacher_id %></td>
+
             <td>  </td>
 
 

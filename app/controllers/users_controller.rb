@@ -1,15 +1,19 @@
 class UsersController < ApplicationController
 
-#for now
+
 def self.find_for_authentication(conditions)
   conditions = ["username = ? or email = ?", conditions[authentication_keys.first], conditions[authentication_keys.first]]
   # raise StandardError, conditions.inspect
   super
 end
 
+
 def index 
 	@users = User.all 
+
 end
+
+
 
 def show
   @user = User.find_by_username(params[:id])

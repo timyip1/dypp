@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
   resources :posts
-  devise_for :teachers
   get 'users/index'
 
   devise_for :admins
@@ -9,18 +8,24 @@ Rails.application.routes.draw do
 
 
 root to: "welcome#index"
+match '/teachers',   to: 'teachers#index',   via: 'get'
 
+#routes for registration
+devise_for :users, controllers: { registrations: "registrations" }
+devise_for :teachers, controllers: { registrations: "teacher/registrations" }
 
-
-devise_for :users, :controllers => { registrations: 'registrations', :path_prefix => 'd' }
 
 resources :users, :only =>[:show]
+
+get 'users/:id/posts' => 'users#posts', :as => :user_posts
+
+
 
    match '/users',   to: 'users#index',   via: 'get'
 
    match '/users/:id',     to: 'users#show',       via: 'get'
-
-match '/teachers',   to: 'teachers#index',   via: 'get'
+   match '/teachers/:id',     to: 'teachers#show',       via: 'get'
+   match '/teachers/list',   to: 'teachers#list',   via: 'get'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
@@ -77,3 +82,5 @@ match '/teachers',   to: 'teachers#index',   via: 'get'
   #     resources :products
   #   end
 end
+
+

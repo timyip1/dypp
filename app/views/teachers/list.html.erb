@@ -1,0 +1,32 @@
+<h1>Teachers</h1>
+
+
+<% @content %>
+<p>
+<table>
+  <tr>
+    <th>ID</th>
+    <th>Email </th>
+    <th>Username</th>
+
+    <th></th>
+  </tr>
+ 
+<% @teachers = Teacher.all %>
+<% @teachers.each do |teacher| %>
+    <tr>
+      <td> <%= teacher.id %></td>
+      <td> <%= teacher.email %></td>
+      <td><%= link_to teacher.username, teacher %></td>
+
+            <td>  </td>
+
+
+      <td></td>
+ 
+
+
+  </tr>
+  <% end %>
+
+  </table>
