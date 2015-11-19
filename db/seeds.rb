@@ -6,10 +6,10 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-user1 = User.create :username => "User1", :email => "user1@example.com", :password => "user123", , :teacher_id => "1"
+user1 = User.create :username => "Jonny", :email => "jon@example.com", :password => "user1234", , :teacher_id => "1"
 
-user2 = User.create :username => "User2", :email => "user2@example.com", :password => "user123", , :teacher_id => "2"
+user2 = User.create :username => "Timmy", :email => "user2@example.com", :password => "user1234", , :teacher_id => "2"
 
-user3 = User.create :username => "User3", :email => "user3@example.com", :password => "user123", , :teacher_id => "3"
+user3 = User.create :username => "Bobby", :email => "maggie@example.com", :password => "user1234", , :teacher_id => "3"
 
-user4 = User.create :username => "User4", :email => "user4@example.com", :password => "user123", , :teacher_id => "4"
+user4 = User.create :username => "Maggie", :email => "maggie@example.com", :password => "user1234", , :teacher_id => "4"
