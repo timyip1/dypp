@@ -1,6 +1,10 @@
 
 
 <!-- must be logged in to log practice -->
+
+ 
+
+
 <% if current_user %>
 <p>
 <h2>Log practice <p>
@@ -19,7 +23,11 @@
 
 		 <%= link_to "Your Students' Entries", teachers_path %>
 <% else %>
-	Please sign in or sign up to start logging practice!
+
+
+
+
+
 <% end %>
 <p>
 
@@ -28,13 +36,16 @@
 
 
 <p>
-
-	Are you a new student?<p> <%= link_to "Sign up now, Student!", new_user_registration_path, class: "btn btn-large btn-primary" %><p>
+<h2>
+	Are you student?<p> 
+</h2>
 
 	<p>
+		 <%= link_to "Sign in", new_user_session_path , class: "btn btn-large btn-primary" %>
+		 <%= link_to "Or sign up", new_user_registration_path%><p>
 
 
-
+<p>
 
 
 
@@ -49,17 +60,23 @@
 
 <% else %>
 
-    Are you a new teacher?
-	<p>
-    <%= link_to "Sign up now, teacher!", new_teacher_registration_path, class: "btn btn-large btn-primary" %>
+   <h2> Are you a teacher?</h2>
+	
     <p>
+    	<%= link_to "Sign in", new_teacher_session_path, class: "btn btn-large btn-primary" %> 
+    	
+    <%= link_to "Or sign up", new_teacher_registration_path %>
 	</b>
 
 <% end %>
 
-
-<%= link_to "Logout", destroy_user_session_path, :method => :delete %>
 <p>
+    
+
+<%= link_to "Logout", destroy_user_session_path, :method => :delete %><p>
+
+
+<p>For testers...<p>
 Test teacher credentials:<p>
 tim@gmail.com, password: password<p>
 ron@gmail.com, password: password<p>
