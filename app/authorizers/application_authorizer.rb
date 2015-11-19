@@ -11,6 +11,9 @@ class ApplicationAuthorizer < Authority::Authorizer
     user.has_role? :admin
   end
 
+
+
+
    # To update a specific resource instance, you must either own it or be an admin
   def updatable_by?(user)
     resource.author == user || user.has_role?(:admin)

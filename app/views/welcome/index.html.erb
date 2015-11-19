@@ -5,67 +5,49 @@
  
 
 
-<% if current_user %>
+
 <p>
-<h2>Log practice <p>
+<% if user_signed_in? %>
+
 <%= link_to "Log my practice!", new_post_path, class: "btn btn-large btn-primary" %>
-</h2>
+
+<% else %>
+<% end %>
+
 <p>
- <% end %>
+
 
 
 
 <p>
 
 <% if teacher_signed_in? %>
-		Welcome teacher <%= current_teacher.username %> (Your id: <%= current_teacher.id %>).<p>
+		Welcome <b><%= current_teacher.username %>!</b> Your teacher number is <b> <%= current_teacher.id %></b><p>
+		Let's check up on your students.<p>
 		
 
-		 <%= link_to "Your Students' Entries", teachers_path %>
-<% else %>
+		 <%= link_to "Your Students' Entries", teachers_path %> or<p>
+		 <%= link_to "Logout", destroy_teacher_session_path, :method => :delete %><p>
 
-
-
-
-
-<% end %>
-<p>
-
-
+<% else %> <!-- when the teacher is not signed in, show the follwing content -->
 
 
 
 <p>
-<h2>
-	Are you student?<p> 
-</h2>
-
-	<p>
-		 <%= link_to "Sign in", new_user_session_path , class: "btn btn-large btn-primary" %>
-		 <%= link_to "Or sign up", new_user_registration_path%><p>
-
-
-<p>
-
-
-
-
-
-
-
 
 <% if user_signed_in? %>
-		You are a student. You are <b> <%= current_user.username %> </b>and your teacher's ID is<b> 
-		<%= current_user.teacher_id %>.
+		Welcome <b> <%= current_user.username %>! </b>Your teacher's ID is<b> 
+		<%= current_user.teacher_id %>. </b><p>Not sure how to display your teacher's name, but we'll just call him or her <b> <%= current_user.teacher_id %>.</b>
+
 
 <% else %>
-
-   <h2> Are you a teacher?</h2>
 	
-    <p>
-    	<%= link_to "Sign in", new_teacher_session_path, class: "btn btn-large btn-primary" %> 
+    <p><p>
+		 <%= link_to "Student Login", new_user_session_path , class: "btn btn-large btn-primary" %>
+		 <%= link_to "Or sign up", new_user_registration_path%><p>
+
+    	<%= link_to "Teacher Login", new_teacher_session_path, class: "btn btn-large btn-primary" %> 
     	
-    <%= link_to "Or sign up", new_teacher_registration_path %>
 	</b>
 
 <% end %>
@@ -73,14 +55,16 @@
 <p>
     
 
-<%= link_to "Logout", destroy_user_session_path, :method => :delete %><p>
+<% end %> <!-- ending the else tag when teacher is signed in -->
 
 
+
+<!--
 <p>For testers...<p>
 Test teacher credentials:<p>
 tim@gmail.com, password: password<p>
 ron@gmail.com, password: password<p>
-
+-->
 
 
 
