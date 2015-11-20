@@ -6,7 +6,6 @@ class TeachersController < ApplicationController
 def index
  @posts = @findteacher.user_posts
  @teachers = Teacher.all
-# @posts = Post.where(User.teacher_id:current_teacher.id)  
 
 end
 

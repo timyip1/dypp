@@ -1,7 +1,7 @@
 class User < ActiveRecord::Base
 
 belongs_to :teacher
-has_many :posts, dependent: :destroy
+has_many :posts
 
 
 include Authority::UserAbilities
